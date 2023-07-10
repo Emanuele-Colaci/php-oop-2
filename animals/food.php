@@ -4,8 +4,8 @@
         public $pesoNetto;
         public $ingredienti;
         
-        public function __construct($nome, $prezzo, $pesoNetto, $ingredienti, $immagine) {
-            parent::__construct($nome, $prezzo, $immagine);
+        public function __construct($immagine, $nome, $nomeAnimale, $prezzo, $pesoNetto, $ingredienti) {
+            parent::__construct($immagine, $nome, $nomeAnimale, $prezzo);
             $this->pesoNetto = $pesoNetto;
             $this->ingredienti = $ingredienti;
         }
