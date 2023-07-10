@@ -8,11 +8,13 @@
         public $nome;
         public $prezzo;
         public $immagine;
+        public $nomeAnimale;
         
-        public function __construct($nome, $prezzo, $immagine) {
+        public function __construct($nome, $prezzo, $immagine, $nomeAnimale) {
             $this->nome = $nome;
             $this->prezzo = $prezzo;
             $this->immagine = $immagine;
+            $this->nomeAnimale = $nomeAnimale;
         }
         
         public function getImmagine() {
@@ -20,41 +22,6 @@
         }
     }
 
-    class Dogs extends Prodotto {
-        public $tipo;
-        
-        public function __construct($nome, $prezzo, $tipo, $immagine) {
-            parent::__construct($nome, $prezzo, $immagine);
-            $this->tipo = $tipo;
-        }
-    }
-    
-    class Cats extends Prodotto {
-        public $tipo;
-        
-        public function __construct($nome, $prezzo, $tipo, $immagine) {
-            parent::__construct($nome, $prezzo, $immagine);
-            $this->tipo = $tipo;
-        }
-    }
-
-    class Fish extends Prodotto {
-        public $tipo;
-        
-        public function __construct($nome, $prezzo, $tipo, $immagine) {
-            parent::__construct($nome, $prezzo, $immagine);
-            $this->tipo = $tipo;
-        }
-    }
-    
-    class Birds extends Prodotto {
-        public $tipo;
-        
-        public function __construct($nome, $prezzo, $tipo, $immagine) {
-            parent::__construct($nome, $prezzo, $immagine);
-            $this->tipo = $tipo;
-        }
-    }
 
 ?>
 <!DOCTYPE html>
