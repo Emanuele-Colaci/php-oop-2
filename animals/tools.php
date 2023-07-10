@@ -1,6 +1,6 @@
 <?php 
 
-    class tools extends Prodotto {
+    class Tools extends Prodotto {
         public $materiale;
         public $dimensioni;
         

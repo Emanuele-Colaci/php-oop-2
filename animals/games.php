@@ -1,6 +1,6 @@
 <?php 
 
-    class games extends Prodotto {
+    class Games extends Prodotto {
         public $caratteristiche;
         public $dimensioni;
         

@@ -23,14 +23,14 @@
     }
 
     $animals = [
-        new food("https://arcaplanet.vtexassets.com/arquivos/ids/243820/royal-canin-size-cane-mini-adult.jpg", "Royal Canin Mini Adult", "<i class='fa-solid fa-dog'></i> Cane", 43.99, "545 g", "Prosciutto, riso"),
-        new food("https://arcaplanet.vtexassets.com/arquivos/ids/245173/almo-nature-holistic-cane-adult-medium-pollo-e-riso.jpg", "Almo Nature Holistic Maintenance Medium Large Tonno e Riso", "<i class='fa-solid fa-dog'></i> Cane", 44.99, "600 g", "Manzo, Cereali"),
-        new food("https://arcaplanet.vtexassets.com/arquivos/ids/245336/almo-daily-menu-cat-400-gr-vitello.jpg", "Almo Nature Cat Daily Lattina", "<i class='fa-solid fa-cat'></i> Gatto", 34.99, "400 g", "Tonno, Pollo, Prosciutto"),
-        new food("https://arcaplanet.vtexassets.com/arquivos/ids/272714/tetra-guppy-mini-flakes.jpg", "Mangime per Pesci Guppy in Fiocchi", "<i class='fa-solid fa-fish'></i> Pesce", 2.95, "30 g", "Pesci e sotto prodotti dei pesci, Cereali, Lieviti, Alghe"),
-        new tools("https://arcaplanet.vtexassets.com/arquivos/ids/258384/voliera-wilma1.jpg", "Voliera Wilma in Legno", "<i class='fa-solid fa-dove'></i> Uccello", 184.99, "Legno", "M: L 83 x P 67 x H 153 cm"),
-        new tools("https://arcaplanet.vtexassets.com/arquivos/ids/272741/tetra-easycrystal-filterpack-250-300.jpg", "Cartucce Filtranti per Filtro EasyCrystal", "<i class='fa-solid fa-fish'></i> Pesce", 2.29, "Materiale espanso", "ND"),
-        new games("https://arcaplanet.vtexassets.com/arquivos/ids/256599/kong-classic1.jpg", "Kong Classic", "<i class='fa-solid fa-dog'></i> Cane", 13.49, "Galleggia e rimbalza", "8.5 cm x 10 cm"),
-        new games("https://arcaplanet.vtexassets.com/arquivos/ids/223852/trixie-gatto-gioco-active-mouse-peluche.jpg", "Topini di peluche Trixie", "<i class='fa-solid fa-cat'></i> Gatto", 4.29, "Morbido con codina in corda", "8.5 cm x 10 cm")
+        new Food("https://arcaplanet.vtexassets.com/arquivos/ids/243820/royal-canin-size-cane-mini-adult.jpg", "Royal Canin Mini Adult", "<i class='fa-solid fa-dog'></i> Cane", 43.99, "545 g", "Prosciutto, riso"),
+        new Food("https://arcaplanet.vtexassets.com/arquivos/ids/245173/almo-nature-holistic-cane-adult-medium-pollo-e-riso.jpg", "Almo Nature Holistic Maintenance Medium Large Tonno e Riso", "<i class='fa-solid fa-dog'></i> Cane", 44.99, "600 g", "Manzo, Cereali"),
+        new Food("https://arcaplanet.vtexassets.com/arquivos/ids/245336/almo-daily-menu-cat-400-gr-vitello.jpg", "Almo Nature Cat Daily Lattina", "<i class='fa-solid fa-cat'></i> Gatto", 34.99, "400 g", "Tonno, Pollo, Prosciutto"),
+        new Food("https://arcaplanet.vtexassets.com/arquivos/ids/272714/tetra-guppy-mini-flakes.jpg", "Mangime per Pesci Guppy in Fiocchi", "<i class='fa-solid fa-fish'></i> Pesce", 2.95, "30 g", "Pesci e sotto prodotti dei pesci, Cereali, Lieviti, Alghe"),
+        new Tools("https://arcaplanet.vtexassets.com/arquivos/ids/258384/voliera-wilma1.jpg", "Voliera Wilma in Legno", "<i class='fa-solid fa-dove'></i> Uccello", 184.99, "Legno", "M: L 83 x P 67 x H 153 cm"),
+        new Tools("https://arcaplanet.vtexassets.com/arquivos/ids/272741/tetra-easycrystal-filterpack-250-300.jpg", "Cartucce Filtranti per Filtro EasyCrystal", "<i class='fa-solid fa-fish'></i> Pesce", 2.29, "Materiale espanso", "ND"),
+        new Games("https://arcaplanet.vtexassets.com/arquivos/ids/256599/kong-classic1.jpg", "Kong Classic", "<i class='fa-solid fa-dog'></i> Cane", 13.49, "Galleggia e rimbalza", "8.5 cm x 10 cm"),
+        new Games("https://arcaplanet.vtexassets.com/arquivos/ids/223852/trixie-gatto-gioco-active-mouse-peluche.jpg", "Topini di peluche Trixie", "<i class='fa-solid fa-cat'></i> Gatto", 4.29, "Morbido con codina in corda", "8.5 cm x 10 cm")
     ];
      
 
@@ -63,7 +63,7 @@
         <main>
             <div class="container">
                 <div class="row">
-                    <?php foreach ($animals as $animal) { ?>
+                    <?php foreach($animals as $animal) { ?>
                         <div class="col-md-4 mb-4">
                             <div class="card h-100">
                                 <img src="<?php echo $animal->getImmagine(); ?>" class="card-img-top" alt="Immagine Prodotto">
@@ -71,13 +71,14 @@
                                     <h4 class="card-title"><?php echo $animal->nome; ?></h4>
                                     <p class="card-text"><?php echo $animal->nomeAnimale; ?></p>
                                     <p class="card-text">Prezzo: € <?php echo $animal->prezzo; ?></p>
-                                    <?php if ($animal instanceof food) { ?>
+                                    <!-- Verifica se l'oggetto è un'istanza di una classe specifica o di una sua classe derivata -->
+                                    <?php if($animal instanceof Food) { ?>
                                         <p class="card-text">Peso netto: <?php echo $animal->pesoNetto; ?></p>
                                         <p class="card-text">Ingredienti: <?php echo $animal->ingredienti; ?></p>
-                                    <?php } elseif ($animal instanceof tools) { ?>
+                                    <?php } elseif($animal instanceof Tools) { ?>
                                         <p class="card-text">Materiale: <?php echo $animal->materiale; ?></p>
                                         <p class="card-text">Dimensioni: <?php echo $animal->dimensioni; ?></p>
-                                    <?php } elseif ($animal instanceof games) { ?>
+                                    <?php } elseif($animal instanceof Games) { ?>
                                         <p class="card-text">Caratteristiche: <?php echo $animal->caratteristiche; ?></p>
                                         <p class="card-text">Dimensioni: <?php echo $animal->dimensioni; ?></p>
                                     <?php } ?>
