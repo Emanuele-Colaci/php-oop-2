@@ -10,7 +10,7 @@
         public $nomeAnimale;
         public $prezzo;
         
-        public function __construct($immagine, $nome, $nomeAnimale, $prezzo) {
+        public function __construct(String $immagine, String $nome, String $nomeAnimale, Float $prezzo) {
             $this->immagine = $immagine;
             $this->nome = $nome;
             $this->nomeAnimale = $nomeAnimale;
