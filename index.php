@@ -23,7 +23,7 @@
     }
 
     $animals = [
-        new Food("https://arcaplanet.vtexassets.com/arquivos/ids/243820/royal-canin-size-cane-mini-adult.jpg", "Royal Canin Mini Adult", "<i class='fa-solid fa-dog'></i> Cane", 43.99, "545 g", "Prosciutto, riso"),
+        new Food("https://www.pets-house.it/5767-large_default/royal-canin-mini-adult-800-gr.jpg", "Royal Canin Mini Adult", "<i class='fa-solid fa-dog'></i> Cane", 43.99, "545 g", "Prosciutto, riso"),
         new Food("https://arcaplanet.vtexassets.com/arquivos/ids/245173/almo-nature-holistic-cane-adult-medium-pollo-e-riso.jpg", "Almo Nature Holistic Maintenance Medium Large Tonno e Riso", "<i class='fa-solid fa-dog'></i> Cane", 44.99, "600 g", "Manzo, Cereali"),
         new Food("https://arcaplanet.vtexassets.com/arquivos/ids/245336/almo-daily-menu-cat-400-gr-vitello.jpg", "Almo Nature Cat Daily Lattina", "<i class='fa-solid fa-cat'></i> Gatto", 34.99, "400 g", "Tonno, Pollo, Prosciutto"),
         new Food("https://arcaplanet.vtexassets.com/arquivos/ids/272714/tetra-guppy-mini-flakes.jpg", "Mangime per Pesci Guppy in Fiocchi", "<i class='fa-solid fa-fish'></i> Pesce", 2.95, "30 g", "Pesci e sotto prodotti dei pesci, Cereali, Lieviti, Alghe"),
@@ -66,7 +66,7 @@
                     <?php foreach($animals as $animal) { ?>
                         <div class="col-md-4 mb-4">
                             <div class="card h-100">
-                                <img src="<?php echo $animal->getImmagine(); ?>" class="card-img-top" alt="Immagine Prodotto">
+                                <img src="<?php echo $animal->getImmagine(); ?>" class="card-img-top" alt="<?php echo $animal->nome; ?>">
                                 <div class="card-body">
                                     <h4 class="card-title"><?php echo $animal->nome; ?></h4>
                                     <p class="card-text"><?php echo $animal->nomeAnimale; ?></p>
